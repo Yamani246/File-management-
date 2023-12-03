@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+
+</head>
+
+<body>
+    {% include 'nav.html' %}
+</br></br></br></br>
+    {% for sub in subjects %}
+    <a href='{%  url "viewfile" %}?sub_name={{sub.name}}'>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body" style="color: black">
+                {{sub.name}}
+            </div>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+    
+</body>
+
+</html>
